@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-// import {LoginService} from '../../service/login.service';
-// import {LoggerService} from '../../service/logger.service';
+import {LoginService} from '../../service/login.service';
+import {LoggerService} from '../../service/logger.service';
 
 @Component({
   selector: 'app-login',
@@ -20,15 +20,15 @@ export class LoginComponent implements OnInit {
    */
   public password: string = '';
 
-  constructor(/*private loginService: LoginService,
-              private router: Router, private loggerService: LoggerService*/) {
+  constructor(private loginService: LoginService,
+              private router: Router, private loggerService: LoggerService) {
   }
 
-  // ngOnInit() {
+  ngOnInit() {
   //   this.loggerService.info('info');
   //   this.loggerService.warn('warn');
   //   this.loggerService.error('error');
-  // }
+  }
 
   /**
    * При нажатии на кнопку "войти"

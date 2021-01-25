@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RestService} from './service/rest.service';
 import {LoginService} from './service/login.service';
 import {LoggerService} from './service/logger.service';
+import {SessionService} from './service/session.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import {LoggerService} from './service/logger.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [RestService, LoginService, LoggerService],
+  providers: [RestService, LoginService, LoggerService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
