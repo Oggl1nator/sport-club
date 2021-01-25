@@ -4,7 +4,9 @@
       <thead>
       <tr role="row">
         <th scope="col" rowspan="2">Группа</th>
+        <th scope="col" rowspan="2">Описание</th>
         <th scope="col" rowspan="2">Количество посещений на абонемент</th>
+        <th scope="col" rowspan="2">Стоимость абонемента</th>
         <th scope="col" colspan="3">Тренер</th>
       </tr>
       <tr role="row">
@@ -16,7 +18,9 @@
       <tbody>
       <tr *ngFor="let group of groups">
         <td>{{group.groupType}}</td>
+        <td>{{group.description}}</td>
         <td>{{group.subscriptionVisitPool}}</td>
+        <td>{{group.subscriptionPrice}}</td>
         <td>
             <span *ngIf="group.coach">{{group.coach.lastName}}</span>
         </td>
