@@ -1,0 +1,30 @@
+<form #f="ngForm" class="page-container screen-center">
+    <h4>Вход</h4>
+
+<div class="row ">
+  <div class="col-12 col-md-4">
+    <app-input-field name="login"
+                 placeholder="Логин"
+                 type="text"
+                 [required]="true"
+                 [(ngModel)]="login"></app-input-field>
+  </div>
+</div>
+
+<div class="row ">
+  <div class="col-12 col-md-4">
+    <app-input-field name="password"
+                 placeholder="Пароль"
+                 type="password"
+                 [required]="true"
+                 [(ngModel)]="password"></app-input-field>
+  </div>
+</div>
+  <!--
+  <div class="row ">
+    <div class="col-12 col-md-12">
+      <button [disabled]="!f.valid" type="button" class="btn btn-primary" (click)="doLogin()">Войти</button>
+    </div>
+  </div>-->
+
+  </form>
