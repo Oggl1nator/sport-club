@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Group } from '../dto/group';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })

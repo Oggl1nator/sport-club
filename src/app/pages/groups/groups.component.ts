@@ -19,7 +19,7 @@ export class GroupsComponent implements OnInit {
 
     getGroupList(): any {
         return this.groupsService.getGroups().subscribe( www => {
-            this.groups = www.groupList;
+            this.groups = www;
             console.log(this.groups);
         });
     }
