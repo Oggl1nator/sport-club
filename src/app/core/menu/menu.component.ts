@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private keycloackService: KeycloakService) { }
 
   ngOnInit(): void {
   }
 
+  isAuth(): boolean {
+    return this.keycloackService.isUserInRole('user');
+  }
+
+  logout(): void {
+    this.keycloackService.logout('http://localhost:4200/');
+  }
 }
