@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>Список абонементов</h3>
+    <table class="table">
+        <thead>
+            <tr role="row">
+                <th scope="col">Спортсмен</th>
+                <th scope="col">Группа</th>
+                <th scope="col">Посещений осталось</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subscription of subscriptions">
+                <td>
+                    {{subscription.client.lastName}} {{subscription.client.firstName}} {{subscription.client.patronymic}}
+                </td>
+                <td>{{subscription.group.groupType}}</td>
+                <td>{{subscription.visitsLeft}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>  
