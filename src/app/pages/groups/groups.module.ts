@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { GroupsRoutingModule } from './groups-routing.module';
 import { GroupsComponent } from './groups.component';
-// import {CoreModule} from '../../core/core.module';
 
 
 @NgModule({

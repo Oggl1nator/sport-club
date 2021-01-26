@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { RestService } from './rest.service';
+import { RestService } from '../rest.service';
 import { HttpClient } from '@angular/common/http';
-import { Group } from '../dto/group';
+import { Group } from '../../dto/group';
 import { Observable } from 'rxjs';
 
 @Injectable({
