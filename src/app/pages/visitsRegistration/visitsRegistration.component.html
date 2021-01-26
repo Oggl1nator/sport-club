@@ -1,0 +1,39 @@
+<div class="visit-registration-view">
+    <h3>Зарегистрировать посещения занятий</h3>
+    <div *ngIf="!pickedCoachId">
+        <h5>Выберите тренера:</h5>
+        <div class="button-column">
+            <button
+                class="btn btn-outline-primary btn-coach"
+                *ngFor="let coach of coaches"
+                (click)="loadSubscribedClients(coach.id)"
+            >
+                {{coach.lastName}} {{coach.firstName}} {{coach.patronymic}}
+            </button>
+        </div>
+    </div>
+    <div *ngIf="clients">
+        <h5>Проставьте галочки напротив спортсменов, посетивших тренировку:</h5>
+        <table class="table">
+            <thead>
+                <tr role="row">
+                    <th scope="col">Присутствовал(-а)</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Отчество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients; index as idx">
+                    <td>
+                        <input type="checkbox" [(ngModel)]="visited[idx]"/>
+                    </td>
+                    <td>{{client.lastName}}</td>
+                    <td>{{client.firstName}}</td>
+                    <td>{{client.patronymic}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="registerVisits()">Зарегистрировать посещения</button>
+    </div>
+</div>

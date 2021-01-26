@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class RestService {
    * @param methodName - имя метода
    * @param params - параметры
    */
-  public doCall(methodName: string, params: any) {
+  public doCall(methodName: string, params: any): any {
     const url = RestService.DEFAULT_PATH + methodName;
     console.log('calling ' + methodName + ' with params: ', params);
     const options = {
@@ -27,9 +26,9 @@ export class RestService {
       withCredentials: true
     };
     return this.httpClient.request('POST', url, options)
-      .pipe(map((response) => {
+      .subscribe( response => {
         return this.mapResponse(methodName, response);
-      }));
+      });
   }
 
   /**

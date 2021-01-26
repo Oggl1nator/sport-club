@@ -1,0 +1,12 @@
+.visit-registration-view {
+    padding: 10px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-coach {
+    margin-bottom: 10px;
+}
