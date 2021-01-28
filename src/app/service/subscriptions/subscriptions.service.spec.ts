@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SubscriptionsService } from './subscriptions.service';
 
-describe('GroupsService', () => {
+describe('SubscriptionsService', () => {
   let service: SubscriptionsService;
 
   beforeEach(() => {
