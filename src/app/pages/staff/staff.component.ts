@@ -13,6 +13,7 @@ export class StaffComponent implements OnInit {
     newCoach!: Coach;
     isAdding: boolean;
     pattern: string = '^[а-яА-ЯЁё\\-\\s]+$';
+    error!: string;
 
     constructor(private staffService: StaffService) {
         this.isAdding = false;
@@ -38,8 +39,10 @@ export class StaffComponent implements OnInit {
         console.log(this.newCoach);
         this.staffService.saveCoach(this.newCoach).subscribe( www => {
             console.log(www);
-            if (www.coach) {
+            if (www && www.coach) {
                 this.staff.push(www.coach);
+            } else {
+                this.error = 'Не удалось сохранить изменения';
             }
             this.undoAdding();
         });

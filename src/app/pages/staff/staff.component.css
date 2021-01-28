@@ -54,3 +54,8 @@
 .btn {
     margin: 5px;
 }
+
+.error-msg {
+    padding: 5px;
+    color: red;
+}
