@@ -1,0 +1,56 @@
+.staff-container {
+    padding: 10px;
+}
+
+.coach-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.coach-info {
+    display: flex;
+    flex-direction: row !important;
+    margin: 5px;
+}
+
+.coach-number {
+    border: 1px solid #808080;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 5px;
+    padding-left: 10px;
+    min-width: 5%;
+}
+
+.coach-full-name {
+    border: 1px solid #808080;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 5px;
+    padding-left: 10px;
+    min-width: 90%;
+}
+
+.new-coach-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.input-label {
+    margin-bottom: 0;
+}
+
+.input-field {
+    border: 1px solid #808080;
+    border-radius: 8px;
+}
+
+.btn-block {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.btn {
+    margin: 5px;
+}

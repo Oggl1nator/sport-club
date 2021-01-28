@@ -1,0 +1,50 @@
+<div class="staff-container">
+    <h4>Список тренеров</h4>
+    <div class="coach-info" *ngFor="let coach of staff; index as idx">
+        <div class="coach-number">
+            <p>{{idx + 1}}</p>
+        </div>
+        <div class="coach-full-name">
+            <p>{{coach.lastName}} {{coach.firstName}} {{coach.patronymic}}</p>
+        </div>
+    </div>
+    <button
+        class="btn btn-primary"
+        *ngIf="!isAdding"
+        (click)="addNewCoach()"
+    >
+        Добавить тренера
+    </button>
+    <div class="new-coach-container" *ngIf="isAdding">
+        <h5>Введите данные нового тренера:</h5>
+        <p class="input-label">Фамилия</p>
+        <input
+            class="input-field"
+            type="text"
+            pattern={{pattern}}
+            [(ngModel)]="newCoach.lastName"
+        />
+        <p class="input-label">Имя</p>
+        <input
+            class="input-field"
+            type="text"
+            pattern={{pattern}}
+            [(ngModel)]="newCoach.firstName"
+        />
+        <p class="input-label">Отчество</p>
+        <input
+            class="input-field"
+            type="text"
+            pattern={{pattern}}
+            [(ngModel)]="newCoach.patronymic"
+        />
+        <div class="btn-block">
+            <button class="btn btn-danger" (click)="undoAdding()">
+                Отмена
+            </button>
+            <button class="btn btn-success" (click)="saveNewCoach()">
+                Сохранить
+            </button>
+        </div>
+    </div>
+</div>

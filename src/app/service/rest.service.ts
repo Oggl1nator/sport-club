@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,9 @@ export class RestService {
       withCredentials: true
     };
     return this.httpClient.request('POST', url, options)
-      .subscribe( response => {
+      .pipe(map((response) => {
         return this.mapResponse(methodName, response);
-      });
+      }));
   }
 
   /**
@@ -39,5 +40,24 @@ export class RestService {
   private mapResponse(methodName, response) {
     console.log(methodName + ' call result: ', response);
     return response;
+  }
+
+  /**
+   * Вызов веб-сервиса
+   * @param methodName - имя метода
+   * @param params - параметры
+   */
+  public doNoPipeCall(methodName: string, params: any): any {
+    const url = RestService.DEFAULT_PATH + methodName;
+    console.log('calling ' + methodName + ' with params: ', params);
+    const options = {
+      headers: this.jsonHeaders,
+      body: params,
+      withCredentials: true
+    };
+    return this.httpClient.request('POST', url, options)
+      .subscribe( response => {
+        return this.mapResponse(methodName, response);
+      });
   }
 }

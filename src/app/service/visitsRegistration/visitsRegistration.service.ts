@@ -30,6 +30,6 @@ export class VisitsRegistrationService {
     const params = {
       clients
     };
-    return this.restService.doCall('saveVisits', params);
+    return this.restService.doNoPipeCall('saveVisits', params);
   }
 }
